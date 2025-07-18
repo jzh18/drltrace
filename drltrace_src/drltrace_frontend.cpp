@@ -44,6 +44,7 @@
 #include "drltrace_options.h"
 #include "drltrace_utils.h"
 #include <string.h>
+using ::dynamorio::droption::droption_parser_t;
 
 #define MAX_DR_CMDLINE (MAXIMUM_PATH*6)
 
