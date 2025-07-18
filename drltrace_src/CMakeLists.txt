@@ -166,8 +166,8 @@ endif (WIN32)
 if (DEFINED DynamoRIO_DIR)
   message(STATUS "Attempting to use pre-built DynamoRIO: ${DynamoRIO_DIR}")
   set(USER_SPECIFIED_DynamoRIO_DIR ON)
-  set(user_DynamoRIO_DIR "dynamorio/cmake" CACHE PATH "DynamoRIO installation's cmake directory")
-  get_filename_component(DynamoRIO_DIR "${PROJECT_BINARY_DIR}/${user_DynamoRIO_DIR}" ABSOLUTE)
+  # set(user_DynamoRIO_DIR "dynamorio/cmake" CACHE PATH "DynamoRIO installation's cmake directory")
+  # get_filename_component(DynamoRIO_DIR "${PROJECT_BINARY_DIR}/${user_DynamoRIO_DIR}" ABSOLUTE)
   find_package(DynamoRIO)
   if (NOT DynamoRIO_FOUND)
     message(FATAL_ERROR "DynamoRIO package required to build")
@@ -335,10 +335,10 @@ set_target_properties(drltracelib PROPERTIES
   
 configure_DynamoRIO_client(drltracelib)
 
-use_DynamoRIO_extension(drltracelib drmgr_static)
-use_DynamoRIO_extension(drltracelib drwrap_static)
-use_DynamoRIO_extension(drltracelib drx_static)
-use_DynamoRIO_extension(drltracelib drcovlib_static)
+use_DynamoRIO_extension(drltracelib drmgr)
+use_DynamoRIO_extension(drltracelib drwrap)
+use_DynamoRIO_extension(drltracelib drx)
+use_DynamoRIO_extension(drltracelib drcovlib)
 use_DynamoRIO_extension(drltracelib droption)
 
 # XXX DrMemory i#2429: DR's droption.h includes both <string.h> and <string.h>

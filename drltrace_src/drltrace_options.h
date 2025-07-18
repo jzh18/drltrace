@@ -31,6 +31,13 @@
  */
 
 #include "droption.h"
+using ::dynamorio::droption::droption_t;
+using ::dynamorio::droption::DROPTION_SCOPE_ALL;
+using ::dynamorio::droption::DROPTION_SCOPE_CLIENT;
+using ::dynamorio::droption::DROPTION_SCOPE_FRONTEND;
+using ::dynamorio::droption::DROPTION_FLAG_ACCUMULATE;
+using ::dynamorio::droption::DROPTION_FLAG_INTERNAL;
+using ::dynamorio::droption::DROPTION_FLAG_SWEEP;
 
 extern droption_t<std::string> op_logdir;
 extern droption_t<bool> op_only_from_app;

@@ -42,6 +42,8 @@
 #include "drltrace.h"
 #include "drltrace_utils.h"
 
+using ::dynamorio::droption::droption_parser_t;
+
 /* Where to write the trace */
 static file_t outf;
 
@@ -237,7 +239,7 @@ print_symbolic_args(const char *name, void *wrapcxt, app_pc func)
  */
 
 static void
-lib_entry(void *wrapcxt, INOUT void **user_data)
+lib_entry(void *wrapcxt, DR_PARAM_OUT void **user_data)
 {
     const char *name = (const char *) *user_data;
     const char *modname = NULL;
